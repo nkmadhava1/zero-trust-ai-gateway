@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript continueOnError="false" enabled="true" timeLimit="200" name="JS-DetectFunctionCall">
+  <DisplayName>JS-DetectFunctionCall</DisplayName>
+  <Properties/>
+  <ResourceURL>jsc://detect-function-call.js</ResourceURL>
+</Javascript>

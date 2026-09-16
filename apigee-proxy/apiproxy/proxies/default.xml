@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <Description/>
+  <FaultRules/>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Condition>request.header.X-User-Token != null</Condition>
+        <Name>AM-Normalize-User-Token</Name>
+      </Step>
+      <Step>
+        <Name>EV-Extract-Bearer</Name>
+      </Step>
+      <Step>
+        <Name>JWT-Verify-Okta-User</Name>
+      </Step>
+      <Step>
+        <Name>AM-UserClaims</Name>
+      </Step>
+      <Step>
+        <Name>JS-ExtractUserRole</Name>
+      </Step>
+      <Step>
+        <Name>JS-AuthZ-Check</Name>
+      </Step>
+      <Step>
+        <Condition>authz.denied = true</Condition>
+        <Name>RF-Deny-Unauthorized</Name>
+      </Step>
+      <Step>
+        <Name>Q-PerUser</Name>
+      </Step>
+      <Step>
+        <Name>KVM-GetSigningKey</Name>
+      </Step>
+      <Step>
+        <Name>KVM-GetIssuer</Name>
+      </Step>
+      <Step>
+        <Name>JWT-MintAgentToken</Name>
+      </Step>
+      <Step>
+        <Name>JS-DetectFunctionResponseTurn</Name>
+      </Step>
+      <Step>
+        <Condition>(flow.isEmployeesPath = false) and (flow.isUserTextTurn = true)</Condition>
+        <Name>SUP-Sanitize-User-Prompt</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response>
+      <Step>
+        <Name>JS-DetectFunctionCall</Name>
+      </Step>
+      <Step>
+        <Condition>(flow.isEmployeesPath = false) and (flow.isTextResponse = true)</Condition>
+        <Name>SMR-Sanitize-Model-Response</Name>
+      </Step>
+      <Step>
+        <Name>DC-AuditStats</Name>
+      </Step>
+    </Response>
+  </PostFlow>
+  <Flows/>
+  <DefaultFaultRule name="Default-Fault-Rule">
+    <Step>
+      <Name>DC-FaultStats</Name>
+    </Step>
+    <AlwaysEnforce>true</AlwaysEnforce>
+  </DefaultFaultRule>
+  <HTTPProxyConnection>
+    <BasePath>/hr-agent-llm-gateway-v2</BasePath>
+    <Properties/>
+  </HTTPProxyConnection>
+  <RouteRule name="to-hr-backend">
+    <Condition>proxy.pathsuffix MatchesPath "/employees/**"</Condition>
+    <TargetEndpoint>hr-backend</TargetEndpoint>
+  </RouteRule>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

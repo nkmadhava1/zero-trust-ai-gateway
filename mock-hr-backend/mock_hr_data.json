@@ -1,0 +1,56 @@
+[
+  {
+    "employee_id": "E1001",
+    "name": "Alex Employee",
+    "email": "demo.employee@test.org",
+    "department": "Engineering",
+    "manager_id": "E1002",
+    "role_title": "Software Engineer",
+    "salary": 95000
+  },
+  {
+    "employee_id": "E1002",
+    "name": "Beth Manager",
+    "email": "demo.manager@test.org",
+    "department": "Engineering",
+    "manager_id": "E1003",
+    "role_title": "Engineering Manager",
+    "salary": 145000
+  },
+  {
+    "employee_id": "E1003",
+    "name": "Chris HRAdmin",
+    "email": "demo.hradmin@test.org",
+    "department": "HR",
+    "manager_id": null,
+    "role_title": "HR Director",
+    "salary": 160000
+  },
+  {
+    "employee_id": "E1004",
+    "name": "David Peer",
+    "email": "demo.peer@test.org",
+    "department": "Engineering",
+    "manager_id": "E1002",
+    "role_title": "Software Engineer",
+    "salary": 98000
+  },
+  {
+    "employee_id": "E1005",
+    "name": "Edward OtherTeam",
+    "email": "demo.otherteam@test.org",
+    "department": "Sales",
+    "manager_id": "E1006",
+    "role_title": "Account Executive",
+    "salary": 88000
+  },
+  {
+    "employee_id": "E1006",
+    "name": "Fred OtherManager",
+    "email": "demo.othermanager@test.org",
+    "department": "Sales",
+    "manager_id": "E1003",
+    "role_title": "Sales Manager",
+    "salary": 135000
+  }
+]

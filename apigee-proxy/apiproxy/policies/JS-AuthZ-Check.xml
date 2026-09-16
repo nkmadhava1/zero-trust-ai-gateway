@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript continueOnError="false" enabled="true" timeLimit="200" name="JS-AuthZ-Check">
+  <DisplayName>JS-AuthZ-Check</DisplayName>
+  <Properties/>
+  <ResourceURL>jsc://authz.js</ResourceURL>
+</Javascript>

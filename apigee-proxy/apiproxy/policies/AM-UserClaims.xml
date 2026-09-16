@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-UserClaims">
+  <DisplayName>AM-UserClaims</DisplayName>
+  <AssignVariable>
+    <Name>user.email</Name>
+    <Ref>jwt.JWT-Verify-Okta-User.decoded.claim.sub</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>user.role</Name>
+    <Ref>jwt.JWT-Verify-Okta-User.decoded.claim.role</Ref>
+  </AssignVariable>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-GetIssuer" mapIdentifier="jwt-issuer">
+  <DisplayName>KVM-GetIssuer</DisplayName>
+  <Properties/>
+  <ExpiryTimeInSecs>3600</ExpiryTimeInSecs>
+  <Get assignTo="private.jwt-issuer">
+    <Key>
+      <Parameter>token-issuer</Parameter>
+    </Key>
+  </Get>
+  <Scope>environment</Scope>
+</KeyValueMapOperations>

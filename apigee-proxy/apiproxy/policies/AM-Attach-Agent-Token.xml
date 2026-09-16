@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-Attach-Agent-Token">
+  <DisplayName>AM-Attach-Agent-Token</DisplayName>
+  <Properties/>
+  <Set>
+    <Headers>
+      <Header name="Authorization">Bearer {jwt.JWT-MintAgentToken.generated_jwt}</Header>
+      <Header name="X-User-Email">{user.email}</Header>
+      <Header name="X-User-Role">{user.role}</Header>
+    </Headers>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

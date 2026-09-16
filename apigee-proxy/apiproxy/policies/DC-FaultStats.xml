@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataCapture name="DC-FaultStats" continueOnError="false" enabled="true">
+  <DisplayName>DC-FaultStats</DisplayName>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <Capture>
+    <DataCollector>dc_user_email</DataCollector>
+    <Collect ref="user.email" default="unknown"/>
+  </Capture>
+  <Capture>
+    <DataCollector>dc_user_role</DataCollector>
+    <Collect ref="user.role" default="unknown"/>
+  </Capture>
+  <Capture>
+    <DataCollector>dc_request_path</DataCollector>
+    <Collect ref="proxy.pathsuffix" default="unknown"/>
+  </Capture>
+  <Capture>
+    <DataCollector>dc_authz_denied</DataCollector>
+    <Collect ref="authz.denied" default="false"/>
+  </Capture>
+  <Capture>
+    <DataCollector>dc_fault_reason</DataCollector>
+    <Collect ref="fault.name" default="none"/>
+  </Capture>
+</DataCapture>

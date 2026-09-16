@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-GetSigningKey" mapIdentifier="agent-signing-keys">
+  <DisplayName>KVM-GetSigningKey</DisplayName>
+  <Properties/>
+  <ExpiryTimeInSecs>3600</ExpiryTimeInSecs>
+  <Get assignTo="private.signingkey">
+    <Key>
+      <Parameter>apigee-signingkey</Parameter>
+    </Key>
+  </Get>
+  <Scope>environment</Scope>
+</KeyValueMapOperations>

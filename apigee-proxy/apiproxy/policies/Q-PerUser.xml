@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota continueOnError="false" enabled="true" name="Q-PerUser">
+  <DisplayName>Q-PerUser</DisplayName>
+  <Properties/>
+  <Identifier ref="user.email"/>
+  <Allow count="30"/>
+  <Interval>1</Interval>
+  <TimeUnit>minute</TimeUnit>
+</Quota>

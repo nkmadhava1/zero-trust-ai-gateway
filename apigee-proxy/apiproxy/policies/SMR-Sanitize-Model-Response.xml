@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SanitizeModelResponse async="false" continueOnError="false" enabled="true" name="SMR-Sanitize-Model-Response">
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <DisplayName>Sanitize Model Response</DisplayName>
+  <ModelArmor>
+    <TemplateName>projects/YOUR_GCP_PROJECT_ID/locations/us-central1/templates/hr-agent-guard</TemplateName>
+  </ModelArmor>
+  <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource>
+  <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource>
+</SanitizeModelResponse>

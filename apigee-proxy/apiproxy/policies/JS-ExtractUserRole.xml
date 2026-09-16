@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript continueOnError="false" enabled="true" timeLimit="200" name="JS-ExtractUserRole">
+  <DisplayName>JS-ExtractUserRole</DisplayName>
+  <Properties/>
+  <ResourceURL>jsc://extract-role.js</ResourceURL>
+</Javascript>

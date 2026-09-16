@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT continueOnError="false" enabled="true" name="JWT-Verify-Okta-User">
+  <DisplayName>JWT-Verify-Okta-User</DisplayName>
+  <Algorithm>RS256</Algorithm>
+  <Source>rawjwt</Source>
+  <TimeAllowance>7h</TimeAllowance>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <PublicKey>
+    <JWKS uri="https://YOUR-OKTA-DOMAIN.okta.com/oauth2/default/v1/keys"/>
+  </PublicKey>
+  <Issuer>https://YOUR-OKTA-DOMAIN.okta.com/oauth2/default</Issuer>
+  <Audience>api://default</Audience>
+</VerifyJWT>

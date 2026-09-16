@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT continueOnError="false" enabled="true" name="JWT-MintAgentToken">
+  <DisplayName>JWT-MintAgentToken</DisplayName>
+  <Algorithm>RS256</Algorithm>
+  <PrivateKey>
+    <Value ref="private.signingkey"/>
+  </PrivateKey>
+  <Subject>YOUR_AGENT_CLIENT_ID</Subject>
+  <Issuer ref="private.jwt-issuer"/>
+  <Audience>backend:hr-api</Audience>
+  <ExpiresIn>600s</ExpiresIn>
+  <AdditionalClaims>
+    <Claim name="act" ref="user.act" type="map"/>
+    <Claim name="scope" ref="user.role"/>
+  </AdditionalClaims>
+</GenerateJWT>

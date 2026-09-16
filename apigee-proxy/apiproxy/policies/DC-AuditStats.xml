@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataCapture name="DC-AuditStats" continueOnError="false" enabled="true">
+  <DisplayName>DC-AuditStats</DisplayName>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <Capture>
+    <Collect ref="user.email" default="unknown"/>
+    <DataCollector>dc_user_email</DataCollector>
+  </Capture>
+  <Capture>
+    <Collect ref="user.role" default="unknown"/>
+    <DataCollector>dc_user_role</DataCollector>
+  </Capture>
+  <Capture>
+    <Collect ref="proxy.pathsuffix" default="unknown"/>
+    <DataCollector>dc_request_path</DataCollector>
+  </Capture>
+  <Capture>
+    <Collect ref="authz.denied" default="false"/>
+    <DataCollector>dc_authz_denied</DataCollector>
+  </Capture>
+</DataCapture>

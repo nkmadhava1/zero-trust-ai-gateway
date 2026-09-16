@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="24" name="hr-agent-llm-gateway-v2">
+  <DisplayName/>
+  <Description>LLM gateway proxy for HR agent</Description>
+  <CreatedAt>1789427327727</CreatedAt>
+  <LastModifiedAt>1789427327727</LastModifiedAt>
+  <BasePaths>/hr-agent-llm-gateway-v2</BasePaths>
+  <Policies>
+    <Policy>SUP-Sanitize-User-Prompt</Policy>
+    <Policy>SMR-Sanitize-Model-Response</Policy>
+    <Policy>JWT-Verify-Okta-User</Policy>
+    <Policy>AM-UserClaims</Policy>
+    <Policy>EV-Extract-Bearer</Policy>
+    <Policy>JS-AuthZ-Check</Policy>
+    <Policy>RF-Deny-Unauthorized</Policy>
+    <Policy>KVM-GetSigningKey</Policy>
+    <Policy>JWT-MintAgentToken</Policy>
+    <Policy>JS-ExtractUserRole</Policy>
+    <Policy>Q-PerUser</Policy>
+    <Policy>AM-Attach-Agent-Token</Policy>
+    <Policy>DC-AuditStats</Policy>
+    <Policy>DC-FaultStats</Policy>
+    <Policy>AM-Normalize-User-Token</Policy>
+    <Policy>JS-DetectFunctionCall</Policy>
+    <Policy>JS-DetectFunctionResponseTurn</Policy>
+    <Policy>KVM-GetIssuer</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <Resources>
+    <Resource>jsc://authz.js</Resource>
+    <Resource>jsc://extract-role.js</Resource>
+    <Resource>jsc://detect-function-call.js</Resource>
+    <Resource>jsc://detect-function-response-turn.js</Resource>
+  </Resources>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+    <TargetEndpoint>hr-backend</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>
