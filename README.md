@@ -5,7 +5,7 @@ behind an Apigee gateway that owns every identity, authorization, injection-
 screening, and credential-delegation decision — independently of whatever
 the LLM decides to do.
 
-Companion code for the write-up: **[link to Medium post]**
+Companion code for the write-up: https://medium.com/@nkmadhavan/i-put-an-llm-behind-a-zero-trust-gateway-then-i-spent-a-week-trying-to-break-it-c387098aef12
 
 > **Note on secrets:** nothing in this repo is a real credential. Copy every
 > `.env.example` to `.env` and fill in your own values before running
